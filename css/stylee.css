@@ -1,0 +1,33 @@
+*{
+    margin:0;
+   
+}
+
+body{  
+    position: relative;
+/* background: #000; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items:center;
+
+}
+
+
+
+:root{
+    --clr:#222327;
+}
+.navigation{
+display: flex;
+border: 9px solid var(--clr);
+border-radius: 10px;
+width:800px;
+min-width: 800px;
+}
+
+
+.navigation .g{
+color: #a3218e;
+}
