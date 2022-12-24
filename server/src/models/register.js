@@ -33,4 +33,4 @@ const playerSchema = new mongoose.Schema({
 const Register =  new mongoose.model("register",playerSchema,"register")
 
 
-module.exports() = Register;
+module.exports = Register;

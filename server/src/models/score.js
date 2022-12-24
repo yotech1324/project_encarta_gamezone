@@ -1,4 +1,4 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 
 const scoreSchema = new mongoose.Schema({
 
@@ -15,4 +15,4 @@ const scoreSchema = new mongoose.Schema({
 
 const Score = new mongoose.model("scores", scoreSchema, "scores")
 
-module.exports() = Score;
+module.exports = Score;

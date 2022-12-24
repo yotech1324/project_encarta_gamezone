@@ -10,7 +10,7 @@ require("./database/connect");
 
 const Register = require("./models/register");
 
-const score = require("./models./score");
+const Score = require("./models/score");
 
 
 // create or register a new player
@@ -46,16 +46,58 @@ res.status(201).render("")
 app.post("/login", async(req, res) =>{
     const username = req.body.username;
     const Username =  await Register.findOne({username:username});
-
+try{
     if(username.username ==  username){
-        res.status(201).render("")
+        res.status(201).render("");
+    }else{
+        res.send("invalid username")
     }
+} catch(error){
+    res.status(400).send("invalid username")
+}
 
+})
+
+// user score save 
+
+
+app.post("/score", async(req, res) =>{
+
+    try{
+        const addscore = new Score({
+            username: req.body.username,
+            score: req.body.score,
+        })
+const added = await addscore.save();
+res.status(201).send(added);
+    } catch(error){
+        res.status(400).send(error)
+    }
+    
 
 })
 
 
 
+// get player data 
+
+
+app.get("/playerdata/:username", async(req ,res) =>{
+    const username = req.params.username;
+
+    const playerdata = await Register.find({username:username});
+    res.json(playerdata);
+})
+
+
+// getting scores 
+
+app.get("/playerscores/:username", async(req, res) =>{
+
+    const username = req.params.username;
+    const playerscores = await Score.find({username:username});
+    res.json(playerscores);
+})
 
 
 
