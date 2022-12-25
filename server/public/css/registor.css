@@ -10,14 +10,21 @@ body {
     display: flex;
     height: 100vh;
     justify-content: center;
-    align-items: center;
+
+/* align-items: center; */
+
+    /* align-items: center; */
     background: linear-gradient(135deg, #308dcb, #7c13c8);
 }
 
 .container {
+    display: flex;
+    flex-direction: column;
     max-width: 700px;
-    height: 90vh;
+    height: 40%;
     width: 100%;
+margin-top: 10%;
+margin-right: 10%;
     background: rgb(225, 227, 229);
     padding: 25px 30px;
     border-radius: 10px;
@@ -125,8 +132,16 @@ form .button {
     margin: 35px 0;
 }
 
-form .button a {
-    height: 200px;
+
+form .button{
+    display: flex;
+    justify-content: center;
+}
+form .button  input{
+
+
+    /* display: flex; */
+    /* height: 40px; */
     width: 300px;
     outline: none;
     color: rgb(250, 245, 245);
@@ -134,15 +149,15 @@ form .button a {
     cursor: pointer;
     font-size: 18px;
     font-weight: 500;
-    border-radius: 7px;
+    border-radius: 80px;
     letter-spacing: 1px;
     background: linear-gradient(135deg, #52aeea, #b63ae8);
     margin-left: 40%;
     text-decoration: none;
-    padding: 15px;
+    /* padding: 15px; */
 }
 
-form .button a:hover {
+form .button:hover {
     background: linear-gradient(-135deg, #52aeea, #b63ae8);
 }
 

@@ -10,6 +10,7 @@ const hbs = require("hbs");
 
  app.use(express.static(static_path));
 
+ app.use(express.urlencoded({extended:false}));
  app.get("/",(req,res)=>{
     res.render("index.hbs")
  })
@@ -59,12 +60,9 @@ app.post("/register", async (req, res) => {
         // const username = localStorage.getItem("username");
         const Username = await Register.findOne({ username: username });
         if (Username.username == username) {
-            res.status(201).render("/server/views/pages/gameMenu.hbs");
-
+            res.status(201).render("/server/views/index.hbs");
+console.log(Username)
         } else {
-            
-        
-
         const registerplayer = new Register({
             fullname: req.body.fullname,
             username: req.body.username,
@@ -72,9 +70,10 @@ app.post("/register", async (req, res) => {
             gender: req.body.gender
         })
         const registered = await registerplayer.save();
-
-        res.status(201).render("server\views\pages\gameMenu.hbs")
-    }
+        // console.log(registered)
+        // res.status(201).json(registered)
+        res.status(201).render("../views/pages/gameMenu.hbs")
+        }
     } catch (error) {
         res.status(400).send(error)
     }

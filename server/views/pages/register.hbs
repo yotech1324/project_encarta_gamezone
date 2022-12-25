@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registor</title>
+    <title>Register</title>
      <link rel="stylesheet" href="../css/registor.css">
 </head>
     <body>
@@ -29,8 +29,8 @@
                   
                 </div>
                 <div class="gender-details">
-                    <input type="radio" name="gender" id="dot-1"> <input type="radio" name="gender" id="dot-2">
-                    <input type="radio" name="gender" id="dot-3">
+                    <input type="radio" name="gender" id="dot-1" value="Male"> <input type="radio" name="gender" id="dot-2" value="Female">
+                    <input type="radio" name="gender" id="dot-3" value="Prefer not to say">
                     <span class="gender-title">Gender</span>
                     <div class="category">
                         <label for="dot-1">
@@ -49,7 +49,10 @@
                 </div>
                 <div class="button">
                     
-                    <a href="gameMenu.hbs" class="submit"><button type="submit" > Register Now </button></a>
+                    
+                    <input type="submit"  class="" value="Register">
+
+                    {{!-- <a href="" class="submit"><button type="submit" > Register Now </button></a> --}}
                 </div>
             </form>
         </div>
