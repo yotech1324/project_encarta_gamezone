@@ -1,36 +1,32 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 
 const playerSchema = new mongoose.Schema({
-
-
-    fullname:{
+    fullname: {
         type:String,
-        required:true
+        required:false
     },
 
-    username:{
+    username: {
         type:String,
-        required:true,
-   unique:true
-   
-    },
-     email:{
-
-        type:String,
-        required:true,
+        required:false,
         unique:true
-     },
-
-     gender:{
+    },
+    email: {
         type:String,
-         required:true,
-     }
+        required:false,
+        unique:true
+    },
+    gender: {
+        type:String,
+        required:false,
+    },
+
 })
 
 
-// creating collection
-
-const Register =  new mongoose.model("register",playerSchema,"register")
+// creating a collection
 
 
-module.exports = Register;
+const Register = new mongoose.model("register", playerSchema,"register")
+
+module.exports=Register;
