@@ -19,7 +19,11 @@
     <!-- code for  side-bar  -->
     <div class="container">
         <header class="header-bar">
-            <h2>YOGESH</h2>
+                <form action="/playerdata" method="get">
+            <h2 class="playername" id="playername" name="username" >
+                
+                </h2> 
+                </form>
             <div class="score">
                 <h2 id="score">Score: 00</h2>
             </div>
@@ -56,6 +60,11 @@
 
     </div>
     <script src="../javascript/game.js"></script>
+
+    <script>
+       // username = localStorage.getItem("username")
+     //   document.getElementById("playername").innerText = `: ${username}`;
+    </script>
 </body>
 
 </html>

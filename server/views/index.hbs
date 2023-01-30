@@ -11,12 +11,38 @@
 </head>
 
 <body>
-    <div class="canvas">
+
+
+     <div class="canvas">
+
         <div class="stars"></div>
-    </div>
+
+        <div class="fly">
+
+            <div class="helmet"></div>
+            <div class="glitter"></div>
+
+            <div class="alien">
+                <div class="topLeft"></div>
+                <div class="topRight"></div>
+                <div class="eyes"></div>
+                <div class="eyebrows"></div>
+                <div class="mouth"></div>
+            </div>
+
+            <div class="middle"></div>
+
+            <div class="ufo">
+                <div class="lights"></div>
+                <div class="legs"></div>
+            </div>
+        </div>
+    </div> 
+
 
     <div class="navigation">
-        <h1 class="h1">
+  <div class="gamezone" >
+      <h1 class="h1">
             <span class="g">G</span>
             <span class="a">A</span>
             <span class="m">M</span>
@@ -26,7 +52,7 @@
             <span class="n">N</span>
             <span class="e">E</span>
         </h1>
-
+  </div>
 
 
         <ul>
@@ -97,15 +123,15 @@
             <div class="main">
                 <form action="/login" method="post" >
 
-                    <input id="inputTag" type="text" placeholder="Enter The Name" name="username">
-                </form>
+                    <input id="inputTag" class="inputTag" type="text" placeholder="Enter The Name" name="username">
             </div>
 
             <a href="">
 
-            <button class="submit" type="submit">Submit</button>
-        
+            <input class="submit" type="submit" value="Submit"></button>
             </a>
+                </form>
+        
         </div>
 
     
@@ -124,9 +150,9 @@
         list.forEach((item) =>
             item.addEventListener('click', activeLink))
 
- const username = document.querySelector("#inputTag");
-            localStorage.setItem("username",username)
-
+const username = document.querySelector('.inputTag').value
+localStorage.setItem(username);
+    console.log(username)
 
             
     </script>

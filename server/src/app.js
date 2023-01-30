@@ -3,7 +3,9 @@ const app = express();
 const port = process.env.port || 3000;
 const path = require("path");
 const hbs = require("hbs");
+// app.use(localStorage)
 
+const playername = 0;
 // new code 
 
  const static_path = path.join(__dirname,"../public");
@@ -23,6 +25,7 @@ const hbs = require("hbs");
  app.get("/register.hbs",(req,res)=>{
     res.render("../views/pages/register.hbs")
  })
+
 
  
  app.get("/pages/game-mode.html",(req,res)=>{
@@ -56,26 +59,21 @@ const { Http2ServerRequest } = require("http2");
 app.post("/register", async (req, res) => {
     try {
 
-        const username = req.body.username;
-        // const username = localStorage.getItem("username");
-        const Username = await Register.findOne({ username: username });
-        if (Username.username == username) {
-            res.status(201).render("/server/views/index.hbs");
-console.log(Username)
-        } else {
+        
         const registerplayer = new Register({
             fullname: req.body.fullname,
             username: req.body.username,
             email: req.body.email,
             gender: req.body.gender
         })
-        const registered = await registerplayer.save();
-        // console.log(registered)
-        // res.status(201).json(registered)
-        res.status(201).render("../views/pages/gameMenu.hbs")
-        }
-    } catch (error) {
-        res.status(400).send(error)
+
+     
+    const registered = await registerplayer.save();
+    // res.status(201).json(registered)
+    res.status(201).render("../views/pages/gameMenu.hbs")
+    
+} catch (error) {
+        res.status(400).render("../views/index.hbs")
     }
 }
 )
@@ -90,19 +88,20 @@ app.post("/login", async (req, res) => {
         // const username = localStorage.getItem("username");
         const Username = await Register.findOne({ username: username });
         if (Username.username == username) {
-            res.status(201).render("../views/index.hbs");
+        
+            
+          res.status(201).render("../views/pages/gameMenu.hbs")
 
-        } else {
-            res.render("/views/pages/gameMenu.hbs")
         }
 
     } catch (error) {
-        res.status(400).send("invalid username")
+        res.status(400).render("../views/pages/register.hbs")
     }
 
 
 })
 
+ 
 
 // user score save apis
 
