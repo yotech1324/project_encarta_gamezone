@@ -1,9 +1,11 @@
 const mongoose = require("mongoose")
-db=""
-mongoose.connect("mongodb+srv://ysahu1324:Yug1324@cluster0.k2o1nr1.mongodb.net/GameZone?retryWrites=true&w=majority",{
-    
+const  dotenv = require('dotenv')
+dotenv.config();
+const connection_URL = process.env.connection_URL 
+mongoose.connect(connection_URL,{
 }).then(() =>{
     console.log(`successfully connected to database`);
 }).catch((error) =>{
+    console.log(connection_URL)
     console.log(`not connetced to database`);
-})
+}) 
