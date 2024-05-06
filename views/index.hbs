@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamezone</title>
+
+    <link rel="stylesheet" href="css/stylee.css">
+</head>
+
+<body>
+
+
+     <div class="canvas">
+
+        <div class="stars"></div>
+
+        <div class="fly">
+
+            <div class="helmet"></div>
+            <div class="glitter"></div>
+
+            <div class="alien">
+                <div class="topLeft"></div>
+                <div class="topRight"></div>
+                <div class="eyes"></div>
+                <div class="eyebrows"></div>
+                <div class="mouth"></div>
+            </div>
+
+            <div class="middle"></div>
+
+            <div class="ufo">
+                <div class="lights"></div>
+                <div class="legs"></div>
+            </div>
+        </div>
+    </div> 
+
+
+    <div class="navigation">
+  <div class="gamezone" >
+      <h1 class="h1">
+            <span class="g">G</span>
+            <span class="a">A</span>
+            <span class="m">M</span>
+            <span class="e">E</span>
+            <span class="z">Z</span>
+            <span class="o">O</span>
+            <span class="n">N</span>
+            <span class="e">E</span>
+        </h1>
+  </div>
+
+
+        <ul>
+            <li class="list">
+                <a href="">
+                    <span class="icon">
+                        <ion-icon class="home"></ion-icon>
+                    </span>
+                    <span id="home" class="text">
+                        Home
+                    </span>
+                </a>
+            </li>
+
+            <li class="list">
+                <a href="">
+                    <span class="icon">
+
+                        <ion-icon class="person-circle-outline"></ion-icon>
+                    </span>
+                    <span  id="profile" class="text">Profile</span>
+                </a>
+            </li>
+
+
+            <li class="list">
+                <a href="gameMenu.hbs">
+                    <span class="icon">
+                        <ion-icon class="game-controller-outline"></ion-icon>
+                    </span>
+                    <span id="games" class="text">Games</span>
+                </a>
+            </li>
+
+
+
+            <li class="list">
+                <a href="">
+                    <span class="icon">
+                        <ion-icon class="settings-outline"></ion-icon>
+                    </span>
+                    <span id="settings" class="text">Settings</span>
+                </a>
+            </li>
+
+            <li class="list">
+                <a href="">
+                    <span class="icon">
+                        <ion-icon class="log-in-outline"></ion-icon>
+                    </span>
+                    <span id="login" class="text">Login</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="register.hbs">
+                    <span class="icon">
+                        <ion-icon class="person-add-outline"></ion-icon>
+                    </span>
+                    <span id="register"  class="text">Register</span>
+                </a>
+            </li>
+
+        <div class="indicator"></div>
+
+        </ul>
+</div>
+        <div class="container">
+            <div class="main">
+                <form action="/login" method="post" >
+
+                    <input id="inputTag" class="inputTag" type="text" placeholder="Enter The Name" name="username">
+            </div>
+
+            <a href="">
+
+            <input class="submit" type="submit" value="Submit"></button>
+            </a>
+                </form>
+        
+        </div>
+
+    
+</body>
+
+
+
+    <script>
+        const list = document.querySelectorAll('.list')
+
+        function activeLink() {
+            list.forEach((item) =>
+                item.classList.remove('active'));
+            this.classList.add('active');
+        }
+        list.forEach((item) =>
+            item.addEventListener('click', activeLink))
+
+const username = document.querySelector('.inputTag').value
+localStorage.setItem(username);
+    console.log(username)
+
+            
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> 
+
+
+
+
+
+
+</html>
